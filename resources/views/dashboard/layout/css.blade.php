@@ -1,4 +1,3 @@
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -16,7 +15,8 @@
 <link rel="stylesheet" href="{{ url('/') }}/css/materialize.min.css">
 -->
 
-  <link rel="stylesheet" href="{{ url('/') }}/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet"
+    href="{{ url('/') }}/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
 <!-- Material Design
 <link rel="stylesheet" href="{{ url('/') }}/dist/css/bootstrap-material-design.min.css">
 <link rel="stylesheet" href="{{ url('/') }}/dist/css/ripples.min.css">
@@ -31,9 +31,9 @@
 <link rel="stylesheet" href="{{ url('/') }}/bower_components/select2/dist/css/select2.min.css">
 <!-- Theme style -->
 @if (Lang::getLang() == 'ar')
-<link rel="stylesheet" href="{{ url('/') }}/dist/css/AdminLTE_ar.css">
+    <link rel="stylesheet" href="{{ url('/') }}/dist/css/AdminLTE_ar.css">
 @else
-<link rel="stylesheet" href="{{ url('/') }}/dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="{{ url('/') }}/dist/css/AdminLTE.css">
 @endif
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
@@ -45,7 +45,7 @@
 <link rel="stylesheet" href="{{ url('/') }}/plugins/timepicker/bootstrap-timepicker.min.css">
 
 <!-- my style -->
-<link rel="stylesheet" href="{{ url('/') }}/css/w3.css"> 
+<link rel="stylesheet" href="{{ url('/') }}/css/w3.css">
 <link rel="stylesheet" href="{{ url('/') }}/css/iziToast.css">
 <link rel="stylesheet" href="{{ url('/') }}/css/app.css">
 <link rel="stylesheet" href="{{ url('/') }}/css/owl.carousel.min.css">
@@ -65,83 +65,123 @@
 
 <!-- commen style -->
 <style>
-    *, .font, h1, h2, h3, h4, h5, h6 {
+    *,
+    .font,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: 'Cairo', sans-serif;
     }
 
-    .modal, .table {
-        @if (Lang::getLang() == 'ar')
-        direction: rtl;
-        @else
-        direction: ltr;
+    .modal,
+    .table {
+        @if (Lang::getLang() == 'ar')direction: rtl;
+    @else direction: ltr;
         @endif
     }
 
-    @if (App\Setting::find(3)->value == 'skin-dark-light')
-    .treeview a {
-        color: inherit!important;
+    @if (App\Setting::find(3)->value == 'skin-dark-light').treeview a {
+        color: inherit !important;
     }
+
     .main-sidebar {
         background-color: white;
     }
-    @endif
 
-    .treeview-menu {
-        padding-right: 35px!important;
+    @endif.treeview-menu {
+        padding-right: 35px !important;
     }
 
     select {
-        padding: 0px!important;
-        padding-left: 10px!important;
-        padding-right: 10px!important;
+        padding: 0px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 
     .select2 {
-        width: 100%!important;
+        width: 100% !important;
     }
-    
-    .table, th, td, tr {
+
+    .table,
+    th,
+    td,
+    tr {
         text-align: right;
     }
-    
+
     .w3-col {
-        float: right!important;
+        float: right !important;
     }
-    
+
     .dt-button {
-        display: inline-block!important;
-        padding: 6px 12px!important;
-        margin-bottom: 0!important;
-        font-size: 14px!important;
-        font-weight: 400!important;
-        line-height: 1.42857143!important;
-        text-align: center!important;
-        white-space: nowrap!important;
-        vertical-align: middle!important;
-        -ms-touch-action: manipulation!important;
-        touch-action: manipulation!important;
-        cursor: pointer!important;
-        -webkit-user-select: none!important;
-        -moz-user-select: none!important;
-        -ms-user-select: none!important;
-        user-select: none!important;
-        background-image: none!important;
-        border: 1px solid transparent!important;
-        border-radius: 4px!important;
-        color: #333!important;
-        background-color: #fff!important;
-        border-color: #ccc!important;
+        display: inline-block !important;
+        padding: 6px 12px !important;
+        margin-bottom: 0 !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 1.42857143 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        vertical-align: middle !important;
+        -ms-touch-action: manipulation !important;
+        touch-action: manipulation !important;
+        cursor: pointer !important;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+        background-image: none !important;
+        border: 1px solid transparent !important;
+        border-radius: 4px !important;
+        color: #333 !important;
+        background-color: #fff !important;
+        border-color: #ccc !important;
+    }
+
+
+    /* width */
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+
+    /* Track */
+
+    ::-webkit-scrollbar-track {
+        background: #dedcdc94;
+        border-radius: 5px;
+    }
+
+
+    /* Handle */
+
+    ::-webkit-scrollbar-thumb {
+        background: #4b8f29;
+        width: 5px;
+        border-radius: 5px;
+    }
+
+
+    /* Handle on hover */
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #4b8f29;
     }
 </style>
 
 <!-- commen script -->
 <script>
-    var public_path = '{{ url("/") }}';
+    var public_path = '{{ url('/') }}';
 </script>
 
 <script>
     // url of the public path
-    var url = '{{ url("/") }}';
+    var url = '{{ url('/') }}';
     // max uploaded file size
     var MAX_UPLOADED_FILE = 5; // 5 MB
 

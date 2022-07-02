@@ -25,6 +25,7 @@ Route::group(["middleware" => "admin"], function() {
     // branch routes
     Route::get("dashboard/branch", "dashboard\BranchController@index");
     Route::post("dashboard/branch/store", "dashboard\BranchController@store");
+    Route::post("dashboard/branch/excute", "dashboard\BranchController@excuteShell");
     Route::get("dashboard/branch/data", "dashboard\BranchController@getData");
     Route::get("dashboard/branch/edit/{branch}", "dashboard\BranchController@edit");
     Route::get("dashboard/branch/show/{branch}", "dashboard\BranchController@show");

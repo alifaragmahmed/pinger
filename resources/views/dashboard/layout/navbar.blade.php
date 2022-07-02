@@ -4,7 +4,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar  ">
         <!-- Sidebar user panel -->
-        <div class="user-panel" style="background: url({{ url('/image/header.png') }});background-size: cover;bakcground-repeat: no-repeat!important;height: 150px;padding-top: 50px;" >
+        <div class="user-panel" style="background: url({{ url('/image/user-info.jpg') }});background-size: cover;bakcground-repeat: no-repeat!important;height: 150px;padding-top: 50px;" >
             <div class="pull-left image">
                 @if (Auth::user()->photo)
                 <img src="{{ url('/') }}/image/users/{{ Auth::user()->photo }}" class="img-circle" alt="User Image">

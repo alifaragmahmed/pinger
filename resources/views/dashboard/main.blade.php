@@ -2,7 +2,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1 class="font w3-xxlarge text-right" >
-        {{ __('dashboard') }} 
+        {{ __('dashboard') }}
         <small></small>
     </h1>
     <ol class="breadcrumb">
@@ -12,18 +12,17 @@
 
 <!-- Main content -->
 <section class="content" style="overflow: auto!important" >
-    <!-- Info boxes --> 
+    <!-- Info boxes -->
     <!-- /.row -->
 
     <div class="row">
-        @if (Auth::user()->role_id == 1)
         <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box" href="#"  >
-                <span class="info-box-icon bg-teal"><i class="fa fa-cubes"></i></span>
+            <a class="info-box" href="#"  onclick="showPage('dashboard/branch')" >
+                <span class="info-box-icon bg-teal"><i class="fa fa-bank"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">{{ __('item') }}</span>
-                    <span class="info-box-number">{{ App\Item::count() }}<small></small></span>
+                    <span class="info-box-text">{{ __('branches') }}</span>
+                    <span class="info-box-number">{{ App\Branch::count() }}<small></small></span>
                 </div>
                 <!-- /.info-box-content -->
             </a>
@@ -31,12 +30,12 @@
         </div>
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box"  href="#"     >
-                <span class="info-box-icon bg-orange"><i class="fa fa-cube"></i></span>
+            <a class="info-box"  href="#"    onclick="showPage('dashboard/user')"  >
+                <span class="info-box-icon bg-orange"><i class="fa fa-users"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">{{ __('category') }}</span>
-                    <span class="info-box-number">{{ App\Category::count() }}</span>
+                    <span class="info-box-text">{{ __('users') }}</span>
+                    <span class="info-box-number">{{ App\User::count() }}</span>
                 </div>
                 <!-- /.info-box-content -->
             </a>
@@ -46,38 +45,24 @@
 
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box"  href="#"     >
-                <span class="info-box-icon w3-teal"><i class="fa fa-male"></i></span>
+            <a class="info-box"  href="#"    onclick="showPage('dashboard/role')"  >
+                <span class="info-box-icon w3-teal"><i class="fa fa-list"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">{{ __('suppliers') }}</span>
-                    <span class="info-box-number">{{ App\Supplier::count() }}</span>
+                    <span class="info-box-text">{{ __('roles') }}</span>
+                    <span class="info-box-number">{{ App\Role::count() }}</span>
                 </div>
                 <!-- /.info-box-content -->
             </a>
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <a class="info-box"  href="#"     >
-                <span class="info-box-icon bg-purple"><i class="fa fa-users"></i></span>
 
-                <div class="info-box-content">
-                    <span class="info-box-text">{{ __('customer') }}</span>
-                    <span class="info-box-number">{{ App\Customer::count() }}</span>
-                </div>
-                <!-- /.info-box-content -->
-            </a>
-            <!-- /.info-box -->
-        </div>
-        @endif
         <!-- /.col -->
-        
+
         <!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
-  
+
         <!-- /.col -->
     </div>
     <br>
@@ -86,4 +71,4 @@
     <!-- /.row -->
 
 </section>
-<script src="{{ url('/') }}/js/Chart.min.js"></script> 
+<script src="{{ url('/') }}/js/Chart.min.js"></script>

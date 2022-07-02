@@ -48,6 +48,20 @@ class BranchController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function excuteShell(Request $request)
+    {
+        $command = $request->type == 'tracert'? 'tracert' : 'ping';
+        $routes = shell_exec($command . " " . $request->ip);
+
+        return str_replace("\n", "<br>", $routes);
+        //print_r($routes);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
