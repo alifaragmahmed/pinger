@@ -6,21 +6,21 @@
 
         <style>
             body {
-                background-image: url('{{ url("/image/sales_backgoround.jpg")  }}')!important; 
+                background-image: url('{{ url("/image/sales_backgoround.jpg")  }}')!important;
                 background-size: 100% 100%!important;
                 background-repeat: no-repeat!important;
             }
-            
+
         </style>
     </head>
     <body class="hold-transition login-page w3-light-gray" style="overflow: hidden">
 
-        <div id="root" > 
+        <div id="root" >
 
-            <!-- Content Wrapper. Contains page content --> 
+            <!-- Content Wrapper. Contains page content -->
             <div class="login-box w3-animate-top " >
                 <div class="login-logo">
-                    <a href="#"  class="w3-text-white" ><b> أسم الشركة  </a>
+                    <a href="#"  class="w3-text-white" ><b> Pinger Tool </a>
                 </div>
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
@@ -37,14 +37,14 @@
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                         <br>
-                        <div class=""> 
+                        <div class="">
                             <!-- /.col -->
                             <div class="form-group">
                                 <button type="submit" class="btn w3-blue btn-block btn-flat">{{ __('login') }}</button>
                             </div>
                             <!-- /.col -->
                         </div>
-                    </form> 
+                    </form>
 
                 </div>
                 <!-- /.login-box-body -->
@@ -53,10 +53,10 @@
         </div>
 
         <!-- load js files -->
-        {!! view("dashboard.layout.js") !!}  
-        
+        {!! view("dashboard.layout.js") !!}
+
         <!-- message scripts -->
-        {!! view("dashboard.layout.msg") !!}  
+        {!! view("dashboard.layout.msg") !!}
     </body>
 </html>
 
