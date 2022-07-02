@@ -20,7 +20,7 @@
             <!-- Content Wrapper. Contains page content -->
             <div class="login-box w3-animate-top " >
                 <div class="login-logo">
-                    <a href="#"  class="w3-text-white" ><b> Pinger Tool </a>
+                    <a href="#"  class="w3-text-white" ><b> Egypt Post </a>
                 </div>
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
