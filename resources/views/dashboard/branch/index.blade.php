@@ -80,7 +80,7 @@
         $(btn).attr('disabled', 'disabled');
         var icon = $(btn).find('i')[0].className;
         $(btn).find('i')[0].className = "fa fa-spin fa-spinner";
-
+        var html = ":><b style='text-transform: capitalize' >" +  type + "</b> <span class='w3-text-indigo' >" + ip + " ...</span><br>";
         $("#" + screen).html(html);
         var data = {
             type: type,
@@ -88,7 +88,7 @@
             _token: '{{ csrf_token() }}'
         };
         $.post("{{ url('/dashboard/branch/excute') }}", $.param(data), function(res){
-            var html = $("#" + screen).html() + ":><b style='text-transform: capitalize' >" +  type + "</b> <span class='w3-text-indigo' >" + ip + " ...</span><br>" + res + "<br>------------------<br>";
+            html = $("#" + screen).html() + res + "<br>------------------<br>";
             $("#" + screen).html(html);
             // enabled button
             $(btn).removeAttr('disabled');
