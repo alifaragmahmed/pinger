@@ -35,22 +35,22 @@
 
                             @if ($branch->wan_ip)
                                 <div class="col-sm-12" style="padding: 5px;">
-                                    <a onclick="excuteShell('ping', '{{ $branch->wan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-default">
-                                        <i class="fa fa-bullhorn"></i> {{ __('Ping Wan') }} {{ $branch->wan_ip }}
+                                    <a onclick="excuteShell('ping', '{{ $branch->wan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-linkedin">
+                                        <i class="fa fa-exchange"></i> {{ __('Ping Wan') }} {{ $branch->wan_ip }}
                                     </a>
                                 </div>
                             @endif
                             @if ($branch->lan_ip)
                                 <div class="col-sm-12" style="padding: 5px;">
-                                    <a onclick="excuteShell('ping', '{{ $branch->lan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-default">
-                                        <i class="fa fa-bullhorn"></i> {{ __('Ping Lan') }} {{ $branch->lan_ip }}
+                                    <a onclick="excuteShell('ping', '{{ $branch->lan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-linkedin">
+                                        <i class="fa fa-exchange"></i> {{ __('Ping Lan') }} {{ $branch->lan_ip }}
                                     </a>
                                 </div>
                             @endif
                             @if ($branch->tunnel_ip)
                                 <div class="col-sm-12" style="padding: 5px;">
-                                    <a onclick="excuteShell('ping', '{{ $branch->tunnel_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-default">
-                                        <i class="fa fa-bullhorn"></i> {{ __('Ping Tunnel') }}
+                                    <a onclick="excuteShell('ping', '{{ $branch->tunnel_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-linkedin">
+                                        <i class="fa fa-exchange"></i> {{ __('Ping Tunnel') }}
                                         {{ $branch->tunnel_ip }}
                                     </a>
                                 </div>
@@ -58,22 +58,22 @@
 
                             @if ($branch->wan_ip)
                                 <div class="col-sm-12" style="padding: 5px;">
-                                    <a onclick="excuteShell('tracert', '{{ $branch->wan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-default">
-                                        <i class="fa fa-bullseye"></i> {{ __('Tracert Wan') }} {{ $branch->wan_ip }}
+                                    <a onclick="excuteShell('tracert', '{{ $branch->wan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-github">
+                                        <i class="fa fa-external-link-square"></i> {{ __('Tracert Wan') }} {{ $branch->wan_ip }}
                                     </a>
                                 </div>
                             @endif
                             @if ($branch->lan_ip)
                                 <div class="col-sm-12" style="padding: 5px;">
-                                    <a onclick="excuteShell('tracert', '{{ $branch->lan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-default">
-                                        <i class="fa fa-bullseye"></i> {{ __('Tracert Lan') }} {{ $branch->lan_ip }}
+                                    <a onclick="excuteShell('tracert', '{{ $branch->lan_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-github">
+                                        <i class="fa fa-external-link-square"></i> {{ __('Tracert Lan') }} {{ $branch->lan_ip }}
                                     </a>
                                 </div>
                             @endif
                             @if ($branch->tunnel_ip)
                                 <div class="col-sm-12" style="padding: 5px;">
-                                    <a onclick="excuteShell('tracert', '{{ $branch->tunnel_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-default">
-                                        <i class="fa fa-bullseye"></i> {{ __('Tracert Tunnel') }}
+                                    <a onclick="excuteShell('tracert', '{{ $branch->tunnel_ip }}', 'shellRes{{ $branch->id }}', this)" class="btn btn-block btn-social btn-  btn-github">
+                                        <i class="fa fa-external-link-square"></i> {{ __('Tracert Tunnel') }}
                                         {{ $branch->tunnel_ip }}
                                     </a>
                                 </div>

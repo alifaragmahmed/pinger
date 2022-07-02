@@ -108,14 +108,14 @@ class UserController extends Controller {
         try {
             $nationalIdValidate = $this->validateNationalId($request->national_id);
 
-            if ($nationalIdValidate['status'] == 0)
-                return $nationalIdValidate;
+            //if ($nationalIdValidate['status'] == 0)
+            //    return $nationalIdValidate;
 
             $validatePhone1 = $this->validatePhone($request->tel1);
             $validatePhone2 = $this->validatePhone($request->tel2);
 
-            if ($validatePhone1['status'] == 0 || $validatePhone2['status'] == 0)
-                return $validatePhone1['status']==0? $validatePhone1 : $validatePhone2;
+            //if ($validatePhone1['status'] == 0 || $validatePhone2['status'] == 0)
+            //    return $validatePhone1['status']==0? $validatePhone1 : $validatePhone2;
 
             if (User::where("username", $request->username)->exists())
                 return Message::error2(__('username already exist'));
@@ -144,17 +144,17 @@ class UserController extends Controller {
         try {
             $nationalIdValidate = $this->validateNationalId($request->national_id, $user);
 
-            if ($nationalIdValidate['status'] == 0)
-                return $nationalIdValidate;
+            //if ($nationalIdValidate['status'] == 0)
+            //    return $nationalIdValidate;
 
             $validatePhone1 = $this->validatePhone($request->tel1);
             $validatePhone2 = $this->validatePhone($request->tel2);
 
-            if ($validatePhone1['status'] == 0 || $validatePhone2['status'] == 0)
-                return $validatePhone1['status']==0? $validatePhone1 : $validatePhone2;
+            //if ($validatePhone1['status'] == 0 || $validatePhone2['status'] == 0)
+            //    return $validatePhone1['status']==0? $validatePhone1 : $validatePhone2;
 
-            if (User::where("username", $request->username)->count() > 0 && $user->username != $request->username)
-                return Message::error(__('username already exist'));
+            //if (User::where("username", $request->username)->count() > 0 && $user->username != $request->username)
+            //    return Message::error(__('username already exist'));
 
             $data = $request->all();
             $data['user_id'] = Auth::user()->id;

@@ -80,7 +80,7 @@
         $(btn).attr('disabled', 'disabled');
         var icon = $(btn).find('i')[0].className;
         $(btn).find('i')[0].className = "fa fa-spin fa-spinner";
-        var html = ":><b style='text-transform: capitalize' >" +  type + "</b> <span class='w3-text-indigo' >" + ip + " ...</span><br>";
+        var html = ":><b style='text-transform: capitalize' >" +  type + "</b> <span class='w3-text-indigo w3-large' >" + ip + " ...</span><br>";
         $("#" + screen).html(html);
         var data = {
             type: type,
