@@ -1,29 +1,30 @@
-
-
 // set height of the frame
 $(".frame").css("height", (window.innerHeight - 50) + "px");
 
 function setNicescroll() {
-//        //background: rgba(255,255,255,0.33333),
-    $(".nicescroll").niceScroll(/*
-     {
-     cursoropacitymin: 0.1,
-     cursorcolor: "rgb(255,255,255)",
-     cursorborder: '7px solid gray',
-     cursorborderradius: 16,
-     autohidemode: 'leave'
-     }*/);
-    $(document).mousemove(function () {
+    //        //background: rgba(255,255,255,0.33333),
+    $(".nicescroll").niceScroll(
+        /*
+             {
+             cursoropacitymin: 0.1,
+             cursorcolor: "rgb(255,255,255)",
+             cursorborder: '7px solid gray',
+             cursorborderradius: 16,
+             autohidemode: 'leave'
+             }*/
+    );
+    $(document).mousemove(function() {
         $(".nicescroll").getNiceScroll().resize();
     });
 }
 
 
 
-// play sound 
+// play sound
 function playSound(name) {
+    return;
     var player = document.getElementById("soundPlayer");
-    
+
     player.src = public_path + "/audio/" + name + ".mp3";
     player.play();
     //new Audio(public_path + "/audio/" + name + ".mp3").play();
@@ -35,7 +36,9 @@ function dataTable() {
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ],
-        "order": [[0, "desc"]]
+        "order": [
+            [0, "desc"]
+        ]
     });
 }
 
@@ -45,7 +48,9 @@ function dataTable2() {
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ],
-        "order": [[0, "desc"]]
+        "order": [
+            [0, "desc"]
+        ]
     });
 }
 
@@ -58,14 +63,14 @@ function success(message, title, img) {
 
     playSound("not2");
     var html =
-            "<table class='w3-text-green' style='direction: ltr!important' >" +
-            "<tr>" +
-            "<td><img src='" + img + "' class=''  width='50px' ></td>" +
-            "<td style='padding:4px' class='w3-text-green'  > " +
-            "<p style='max-width: 200px;margin-top: 5px!important' ><b>" + message + "</b></p>" +
-            "</td>" +
-            "</tr>" +
-            "</table>";
+        "<table class='w3-text-green' style='direction: ltr!important' >" +
+        "<tr>" +
+        "<td><img src='" + img + "' class=''  width='50px' ></td>" +
+        "<td style='padding:4px' class='w3-text-green'  > " +
+        "<p style='max-width: 200px;margin-top: 5px!important' ><b>" + message + "</b></p>" +
+        "</td>" +
+        "</tr>" +
+        "</table>";
     $instance = iziToast.show({
         class: 'shadow izitoast',
         timeout: 10000,
@@ -79,18 +84,18 @@ function success(message, title, img) {
 function error(message, title, img) {
     if (img == undefined || img.length <= 0)
         img = public_path + "/image/logo.png";
- 
+
 
     playSound("not2");
     var html =
-            "<table class='' style='direction: ltr!important w3-text-red' >" +
-            "<tr>" +
-            "<td><img src='" + img + "' class='' width='50px' ></td>" +
-            "<td style='padding:4px' class='w3-text-red' > " +
-            "<p style='max-width: 200px;margin-top: 5px!important' ><b>" + message + "</b></p>" +
-            "</td>" +
-            "</tr>" +
-            "</table>";
+        "<table class='' style='direction: ltr!important w3-text-red' >" +
+        "<tr>" +
+        "<td><img src='" + img + "' class='' width='50px' ></td>" +
+        "<td style='padding:4px' class='w3-text-red' > " +
+        "<p style='max-width: 200px;margin-top: 5px!important' ><b>" + message + "</b></p>" +
+        "</td>" +
+        "</tr>" +
+        "</table>";
     iziToast.show({
         class: 'w3-pale-red shadow izitoast',
         timeout: 10000,
@@ -108,15 +113,15 @@ function remove(text, url, div, action) {
         icon: "warning",
         buttons: true,
         dangerMode: true,
-    }).then(function (willDelete) {
+    }).then(function(willDelete) {
         if (willDelete) {
             if (div != undefined) {
                 $(div).remove();
             }
-            $.get(url, function (data) {
+            $.get(url, function(data) {
                 if (data.status == 1) {
                     success(data.message);
-                    // reload data 
+                    // reload data
                     $('#table').DataTable().ajax.reload();
 
                     if (action != undefined)
@@ -125,21 +130,20 @@ function remove(text, url, div, action) {
                     error(data.message);
                 }
             });
-        } else {
-        }
+        } else {}
     });
 }
 
 
 function showPage(url) {
-    $.get(url, function (response) {
+    $.get(url, function(response) {
         $(".frame").html(response);
     });
 }
 
 function edit(route, modal, place) {
-    $.get(route, function (r) {
-        if (modal) { 
+    $.get(route, function(r) {
+        if (modal) {
             $("." + place).html(r);
             //
             $('#' + modal).modal('show');
@@ -148,7 +152,7 @@ function edit(route, modal, place) {
             //
             $('#editModal').modal('show');
         }
-        
+
         //
         formAjax(true);
     });
@@ -161,10 +165,10 @@ function viewImage(image) {
     modal.style.zIndex = "10000000";
 
     modal.innerHTML = "<center><div class='w3-animate-zoom' > " +
-            "<img src='" + image.src + "' />"
-            + "</div></center>  ";
+        "<img src='" + image.src + "' />" +
+        "</div></center>  ";
 
-    modal.onclick = function () {
+    modal.onclick = function() {
         modal.remove();
     };
 
@@ -179,10 +183,10 @@ function viewFile(div) {
     modal.style.paddingTop = "20px";
 
     modal.innerHTML = "<center><div class='w3-animate-zoom' > " +
-            '<iframe frameborder="0" scrolling="no" width="400" height="600" src="' + div.getAttribute("data-src") + '" ></iframe>'
-            + "</div></center>  ";
+        '<iframe frameborder="0" scrolling="no" width="400" height="600" src="' + div.getAttribute("data-src") + '" ></iframe>' +
+        "</div></center>  ";
 
-    modal.onclick = function () {
+    modal.onclick = function() {
         modal.remove();
     };
 
@@ -214,34 +218,29 @@ function loadFile(input, event) {
 }
 
 function loadImgWithoutCache() {
-    $('img').each(function () {
+    $('img').each(function() {
         if (this.src.length > 0)
             $(this).attr('src', $(this).attr('src') + '?' + (new Date()).getTime());
     });
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     try {
         loadImgWithoutCache();
         setNicescroll();
-    } catch (e) {
-    }
+    } catch (e) {}
 });
 
 var app = new Vue({
     el: '#topbarDiv',
     data: {
-        notifications: [
-        ]
+        notifications: []
     },
     methods: {
-        addItem: function () {
+        addItem: function() {
             this.items.push(this.item);
         },
     },
-    computed: {
-    },
-    watch: {
-    }
+    computed: {},
+    watch: {}
 });
-

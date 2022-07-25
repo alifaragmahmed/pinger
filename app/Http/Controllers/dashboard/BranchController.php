@@ -54,7 +54,8 @@ class BranchController extends Controller
      */
     public function excuteShell(Request $request)
     {
-        $command = $request->type == 'tracert'? 'tracert' : 'ping';
+        $command = $request->type;
+        //$command = $request->type == 'tracert' || $request->type == 'tracert -d'? $request->type : 'ping';
         $routes = shell_exec($command . " " . $request->ip);
 
         notify($request->type . " " . $request->ip, $request->type . " " . $request->ip, 'fa fa-bullseye');

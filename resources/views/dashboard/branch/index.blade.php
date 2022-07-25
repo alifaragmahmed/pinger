@@ -87,6 +87,7 @@
             ip: ip,
             _token: '{{ csrf_token() }}'
         };
+        console.log(data);
         $.post("{{ url('/dashboard/branch/excute') }}", $.param(data), function(res){
             html = $("#" + screen).html() + res + "<br>------------------<br>";
             $("#" + screen).html(html);
